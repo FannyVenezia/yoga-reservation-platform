@@ -1,5 +1,6 @@
 class CoursesController < ApplicationController
   before_action :set_course, only: %i[show edit update destroy]
+
   skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
@@ -22,7 +23,7 @@ class CoursesController < ApplicationController
     @course = Course.new(course_params)
     @course.user = current_user
     if @course.save
-      redirect_to course_path(@course), notice: "Class was successfully created."
+      redirect_to course_path(@course), notice: "Votre cours a bien été crée."
     else
       redirect_to root_path
     end
@@ -30,7 +31,7 @@ class CoursesController < ApplicationController
 
   def destroy
     @course.destroy
-    redirect_to courses_path, notice: "Class was successfully destroyed."
+    redirect_to courses_path, notice: "Votre cours a bien été détruit."
   end
 
   def edit
@@ -38,7 +39,7 @@ class CoursesController < ApplicationController
 
   def update
     if @course.update(course_params)
-      redirect_to course_path(@course), notice: "Your class was successfully changed."
+      redirect_to course_path(@course), notice: "Votre cours a bien été modifié."
     else
       render :edit, status: :unprocessable_entity
     end

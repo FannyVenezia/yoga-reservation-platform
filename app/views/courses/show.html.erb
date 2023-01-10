@@ -1,1 +1,4 @@
 <h1>Hi !</h1>
+<%= @course.name %>
+
+<%= link_to "Supprimer", course_path(@course), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
