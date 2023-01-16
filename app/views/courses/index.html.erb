@@ -1,4 +1,4 @@
-<h1>Hi !</h1>
+<h3>Trouvez le cours qui vous convient le mieux !</h3>
 
 <%= form_with url: courses_path, method: :get, class: "d-flex" do %>
   <%= text_field_tag :query,
@@ -11,4 +11,7 @@
 
 <% @courses.each do |course| %>
   <%= course.name %>
+  <%= course.category %>
+  <%= course.time %>
+  <%= course.day %>
 <% end %>

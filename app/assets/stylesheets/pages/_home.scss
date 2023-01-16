@@ -12,24 +12,13 @@
 }
 
 .banner-home {
+  color:antiquewhite;
 	padding: 95px;
 	text-align: center;
   background-size: cover;
   opacity: 2;
   margin-top: 60px;
   h2 {
-    margin-bottom: 30px;
-  }
-}
-
-.btn-purple {
-  color: white;
-  background-color: rgb(134, 25, 134);
-  padding: 12px 21px;
-  text-decoration: none;
-  border-radius: 20px;
-  &:hover {
-    color: rgb(134, 25, 134);
-    background-color: white;
+    margin-bottom: 40px;
   }
 }

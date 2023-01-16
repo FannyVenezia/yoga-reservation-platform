@@ -1,8 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>YogaReservationPlatform</title>
+    <title>Ahimsa Yoga 🕉</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Google result text -->
+    <title>Ahimsa Yoga | Cours de yoga partout, pour tout le monde</title>
+    <!-- Google result description -->
+    <meta name="description" content="Ahimsa Yoga est une plateforme de cours de yoga, en ligne ou en présentiel,
+    du débutant au confirmé,vous trouverez forcément un cours adapté pour vous !">
+
+    <!-- Facebook result -->
+    <meta property="og:title" content="RentMe! | Location de voitures entre particuliers">
+    <meta property="og:image" content="logo.png">
+    <meta property="og:description" content="Ahimsa Yoga est une plateforme de cours de yoga, en ligne ou en présentiel,
+    du débutant au confirmé,vous trouverez forcément un cours adapté pour vous !">
+    <meta property="og:site_name" content="Ahimsa Yoga"/>
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,7 +25,7 @@
   </head>
 
   <body>
-    <%= render "shared/navbar" %>
+    <%= render "shared/navbar"  unless ( controller_name == "pages" && action_name == "home") %>
     <%= render "shared/flashes" %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
