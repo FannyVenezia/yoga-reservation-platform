@@ -22,6 +22,7 @@ class CoursesController < ApplicationController
   def create
     @course = Course.new(course_params)
     @course.user = current_user
+    @course.professor = "#{current_user.first_name} #{current_user.last_name}"
     if @course.save
       redirect_to course_path(@course), notice: "Votre cours a bien été crée."
     else
@@ -52,6 +53,6 @@ class CoursesController < ApplicationController
   end
 
   def course_params
-    params.require(:course).permit(:name, :user_id, :time, :category)
+    params.require(:course).permit(:name, :user_id, :time, :day, :professor, :category)
   end
 end
